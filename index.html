@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Amruta | Creative Portfolio</title>
+    <title>Amruta | Portfolio</title>
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial;
@@ -12,38 +16,38 @@
             text-align: center;
         }
 
+        nav {
+            position: fixed;
+            width: 100%;
+            background: #111;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
         section {
-            padding: 80px 20px;
-            animation: fadeIn 1.5s ease;
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 0.8s;
         }
 
-        h1 {
-            font-size: 42px;
-        }
-
-        p {
-            font-size: 18px;
-            color: #cfcfcf;
-        }
-
-        img {
-            width: 150px;
-            border-radius: 50%;
-            margin-top: 20px;
+        .show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .btn {
             padding: 12px 25px;
             background: linear-gradient(45deg, #ff6ec4, #7873f5);
-            color: white;
             border: none;
             border-radius: 25px;
+            color: white;
             cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: scale(1.1);
         }
 
         .card {
@@ -52,58 +56,83 @@
             padding: 20px;
             width: 260px;
             border-radius: 15px;
-            transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        @keyframes fadeIn {
-            from {opacity: 0; transform: translateY(20px);}
-            to {opacity: 1; transform: translateY(0);}
+        input, textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            border: none;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
     <!-- HERO -->
-    <section>
+    <section id="home">
         <h1>Hi, I'm Amruta 👋</h1>
         <p>Creative Developer | AI Enthusiast</p>
-
-        <img src=""C:\Users\skamr\Downloads\image.jpg"">
-
-        <br><br>
-        <button class="btn" onclick="showMessage()">Let's Connect</button>
+        <button class="btn">Explore</button>
     </section>
 
     <!-- ABOUT -->
-    <section>
+    <section id="about">
         <h1>About Me</h1>
-        <p>I love building creative, meaningful tech projects and exploring AI 🚀</p>
+        <p>I build creative tech projects and explore AI 🚀</p>
     </section>
 
     <!-- PROJECTS -->
-    <section>
+    <section id="projects">
         <h1>My Projects</h1>
 
         <div class="card">
-            <h3>AI Internship Career Advisor</h3>
-            <p>AI System that evolves with user goals and gives smart career guidance</p>
+            <h3>AI Career Advisor</h3>
+            <p>AI system with memory & personalization</p>
         </div>
 
         <div class="card">
-            <h3>Creative Portfolio</h3>
-            <p>A stylish website to showcase my work</p>
+            <h3>Portfolio Website</h3>
+            <p>My personal creative space</p>
         </div>
 
     </section>
 
+    <!-- CONTACT -->
+    <section id="contact">
+        <h1>Contact Me</h1>
+
+        <input type="text" placeholder="Your Name"><br>
+        <input type="email" placeholder="Your Email"><br>
+        <textarea placeholder="Your Message"></textarea><br>
+
+        <button class="btn" onclick="sendMessage()">Send</button>
+    </section>
+
     <script>
-        function showMessage() {
-            alert("Thanks for visiting my site 😎");
+        // Scroll animation
+        const sections = document.querySelectorAll("section");
+
+        window.addEventListener("scroll", () => {
+            sections.forEach(sec => {
+                const top = sec.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    sec.classList.add("show");
+                }
+            });
+        });
+
+        function sendMessage() {
+            alert("Message sent (demo only) 🚀");
         }
     </script>
 
