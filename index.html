@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amruta | Creative Portfolio</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #0f0f1a;
+            color: white;
+            text-align: center;
+        }
+
+        section {
+            padding: 80px 20px;
+            animation: fadeIn 1.5s ease;
+        }
+
+        h1 {
+            font-size: 42px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #cfcfcf;
+        }
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ff6ec4, #7873f5);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .card {
+            background: #1c1c2e;
+            margin: 20px auto;
+            padding: 20px;
+            width: 260px;
+            border-radius: 15px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section>
+        <h1>Hi, I'm Amruta 👋</h1>
+        <p>Creative Developer | AI Enthusiast</p>
+
+        <img src=""C:\Users\skamr\Downloads\image.jpg"">
+
+        <br><br>
+        <button class="btn" onclick="showMessage()">Let's Connect</button>
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+        <h1>About Me</h1>
+        <p>I love building creative, meaningful tech projects and exploring AI 🚀</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+        <h1>My Projects</h1>
+
+        <div class="card">
+            <h3>AI Internship Career Advisor</h3>
+            <p>AI System that evolves with user goals and gives smart career guidance</p>
+        </div>
+
+        <div class="card">
+            <h3>Creative Portfolio</h3>
+            <p>A stylish website to showcase my work</p>
+        </div>
+
+    </section>
+
+    <script>
+        function showMessage() {
+            alert("Thanks for visiting my site 😎");
+        }
+    </script>
+
+</body>
+</html>
